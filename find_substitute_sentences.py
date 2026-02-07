@@ -7,7 +7,7 @@ from datetime import datetime
 
 # start with word that has fewest candidates
 #   for each candidate, shrink the other words' candidate lists, and check the one with shortest, recursively
-# along the way store candidates what have letters in a given position
+# along the way store candidates that have letters in a given position
 
 #Lowercase and remove nonalpha # Hi 1 -> hi
 letter_set = frozenset('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz')
@@ -109,3 +109,4 @@ def find_substitutes(test_sentence):
 
 
     return phrases
+
