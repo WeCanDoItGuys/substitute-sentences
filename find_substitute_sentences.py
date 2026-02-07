@@ -39,7 +39,7 @@ def find_substitutes(test_sentence):
     min_length = min(len(word) for word in test_words)
     max_length = max(len(word) for word in test_words)
     #frequent_scrabble (45k), frequent_scrabble_medium (12k), frequent_scrabble_small (3k)
-    dictionary_file = '../dictionary/12dicts/International/3of6game.txt' #'12dicts/International/3of6game.txt'
+    dictionary_file = 'dictionary/12dicts/International/3of6game.txt' #'12dicts/International/3of6game.txt'
     with open(dictionary_file) as f:
         words={w for word in f.read().splitlines() 
                   if min_length<=len(w:=lower_alpha(word))<=max_length}
@@ -106,5 +106,6 @@ def find_substitutes(test_sentence):
         sort_sets(remn, c, candidates, phrase)
     
     phrases=sorted(' '.join(phrase) for phrase in phrases)
+
 
     return phrases
