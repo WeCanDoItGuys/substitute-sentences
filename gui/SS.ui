@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>1374</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Substitute Sentences Tool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>ssIco.png</normaloff>ssIco.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="phraseLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>1031</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="text">
+     <string>Phrase to Substitute</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>180</y>
+      <width>1161</width>
+      <height>1071</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1159</width>
+       <height>1069</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QCheckBox" name="exportCheckBox">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>110</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Also Export Phrases</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="capitalizeWordsTip">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>100</y>
+      <width>1031</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Capitalize words you don't want to be self-substituted</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="submitPhraseButton">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>100</y>
+      <width>271</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Generate</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="phraseInput">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>1161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>be the change</string>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="outputFolderButton">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>110</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Output Folder</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dropdownLockTip">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>1250</y>
+      <width>1161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Select a word in a dropdown to lock it in as part of the output phrase, click Generate again to remove all locks</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lengthyFileTip">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>1290</y>
+      <width>1161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Locking in a word or clicking Generate reads phrases from exported file if exists, takes time if file is large</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <zorder>capitalizeWordsTip</zorder>
+   <zorder>phraseLabel</zorder>
+   <zorder>scrollArea</zorder>
+   <zorder>exportCheckBox</zorder>
+   <zorder>submitPhraseButton</zorder>
+   <zorder>phraseInput</zorder>
+   <zorder>outputFolderButton</zorder>
+   <zorder>dropdownLockTip</zorder>
+   <zorder>lengthyFileTip</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionRun_All">
+   <property name="text">
+    <string>Run All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionDelete_Created_Files">
+   <property name="text">
+    <string>Delete Created Files</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Del</string>
+   </property>
+  </action>
+  <action name="actionSet_Defaults">
+   <property name="text">
+    <string>Set Defaults</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionChange_Font_Size">
+   <property name="text">
+    <string>Change Font Size</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="actionAligned_Images">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Aligned Images</string>
+   </property>
+  </action>
+  <action name="actionDisplacement">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Displacement</string>
+   </property>
+  </action>
+  <action name="actionTraction_Force">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Traction Force</string>
+   </property>
+  </action>
+  <action name="actionContour">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Contour</string>
+   </property>
+  </action>
+  <action name="actionNotes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Notes</string>
+   </property>
+  </action>
+  <action name="actionFile_Deletion_Warning">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>File Deletion</string>
+   </property>
+  </action>
+  <action name="actionSet_Defaults_2">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Set Defaults</string>
+   </property>
+  </action>
+  <action name="actionAll_in_One">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>All in One</string>
+   </property>
+  </action>
+  <action name="actionHelpful_Notes">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Helpful Notes</string>
+   </property>
+  </action>
+  <action name="actionLicense">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>License</string>
+   </property>
+  </action>
+  <action name="actiontest">
+   <property name="text">
+    <string>test</string>
+   </property>
+  </action>
+  <action name="actionRestore_Factory_Defaults">
+   <property name="text">
+    <string>Restore Factory Defaults</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
