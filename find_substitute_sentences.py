@@ -107,6 +107,7 @@ def find_substitutes(test_sentence):
     
     phrases=sorted(' '.join(phrase) for phrase in phrases)
 
-
     return phrases
 
+
+#with open('be_the_change.txt','w') as f: f.write('\n'.join(find_substitutes("be the change")))
